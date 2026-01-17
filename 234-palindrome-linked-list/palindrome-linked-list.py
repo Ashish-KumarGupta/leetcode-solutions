@@ -4,6 +4,15 @@
 #         self.val = val
 #         self.next = next
 class Solution(object):
+
+    def findMid(self, head):
+        slow = head
+        fast = head
+        while(fast != None and fast.next != None):
+            slow = slow.next
+            fast = fast.next.next
+        return slow
+        
     def isPalindrome(self, head):
         """
         :type head: Optional[ListNode]
@@ -33,10 +42,4 @@ class Solution(object):
             right = right.next
         return True
     
-    def findMid(self, head):
-        slow = head
-        fast = head
-        while(fast != None and fast.next != None):
-            slow = slow.next
-            fast = fast.next.next
-        return slow
+    
