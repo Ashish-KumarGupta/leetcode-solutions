@@ -9,6 +9,8 @@ class Solution(object):
         :type head: Optional[ListNode]
         :rtype: Optional[ListNode]
         """
+        if not head or not head.next:
+            return head
         slow = head
         fast = head
         while(fast != None and fast.next != None):
