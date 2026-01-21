@@ -4,14 +4,14 @@ class Solution(object):
         :type address: str
         :rtype: str
         """
-        # ip = address.replace(".", "[.]")
-        # return ip
+        ip = address.replace(".", "[.]")
+        return ip
 
-        ans = ""
+        # ans = ""
 
-        for i in address:
-            if i == ".":
-                ans += "[.]"
-            else:
-                ans += i
-        return ans
+        # for i in address:
+        #     if i == ".":
+        #         ans += "[.]"
+        #     else:
+        #         ans += i
+        # return ans
