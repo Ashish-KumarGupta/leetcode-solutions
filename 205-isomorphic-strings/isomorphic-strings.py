@@ -22,8 +22,8 @@ class Solution(object):
 
         return True
 
-        # dic1 =[]
-        # dic2 = []
+        # si =[]
+        # ti = []
 
         # for i in s:
         #     dic1.append(s.index(i))
