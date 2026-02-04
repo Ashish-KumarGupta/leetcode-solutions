@@ -3,23 +3,23 @@ class Solution(object):
         n = len(nums)
         i = 0
 
-        
+
+        # up
         while i+1 < n and nums[i] < nums[i+1]:
             i += 1
-        if i == 0:  
+        if i == 0:
             return False
 
-       
-        down_start = i
+        # down
+        dn_start = i
         while i+1 < n and nums[i] > nums[i+1]:
-            i += 1
-        if i == down_start:  
+            i +=1
+        if i == dn_start:
             return False
-
-        up2_start = i
+        # again up
+        up_again = i
         while i+1 < n and nums[i] < nums[i+1]:
             i += 1
-        if i == up2_start:  
+        if i == up_again:
             return False
-
-        return i == n-1  
+        return i == n-1
