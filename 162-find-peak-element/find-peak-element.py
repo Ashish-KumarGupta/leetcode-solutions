@@ -10,6 +10,6 @@ class Solution(object):
                 last = mid
             else:
                 first = mid + 1
-        return first
+        return last
 
         
