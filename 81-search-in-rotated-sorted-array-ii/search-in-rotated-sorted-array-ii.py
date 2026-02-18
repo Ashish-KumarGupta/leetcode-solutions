@@ -8,9 +8,9 @@ class Solution(object):
             
             if nums[mid] == target:
                 return True
-            if nums[left] == nums[mid] and nums[mid] == nums[right]:
+            if nums[left] == nums[mid] == nums[right]:
                 left +=1
-                right -=1
+                right-=1
                 continue
             
             if nums[left] <= nums[mid]:
