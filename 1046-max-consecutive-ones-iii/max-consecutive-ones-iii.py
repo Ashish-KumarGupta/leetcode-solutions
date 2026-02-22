@@ -8,7 +8,7 @@ class Solution(object):
         while(r < n):
             if(nums[r] == 0):
                 zero +=1
-            while zero > k:
+            if zero > k:
                 if nums[l] == 0:
                     zero -= 1
                 l +=1
