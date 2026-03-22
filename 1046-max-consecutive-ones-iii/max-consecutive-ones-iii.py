@@ -8,7 +8,7 @@ class Solution(object):
         while(r < n):
             if(nums[r] == 0):
                 zero +=1
-            if zero > k:
+            while zero > k:
                 if nums[l] == 0:
                     zero -= 1
                 l +=1
@@ -16,3 +16,16 @@ class Solution(object):
             mxlen = max(mxlen, r-l +1)
             r += 1
         return mxlen
+
+
+        # while(r < n):
+        #     if(nums[r] == 0):
+        #         zero +=1
+        #     if zero > k:
+        #         if nums[l] == 0:
+        #             zero -= 1
+        #         l +=1
+
+        #     mxlen = max(mxlen, r-l +1)
+        #     r += 1
+        # return mxlen
