@@ -1,30 +1,15 @@
 class Solution(object):
     def nextGreaterElements(self, nums):
-        st=[]
-        n= len(nums)
-        res=[-1]*n
-        for i in range(2*n-1,-1,-1):
-            val = nums[i % n]
-            
+        n = len(nums)
+        st = []
+        ans = [-1]*n
 
-            
-
-            while st and st[-1]<=val:
-
+        for i in range(2*n-1, -1, -1):
+            val = nums[i %n]
+            while st and val >= st[-1]:
                 st.pop()
-
-                
             if i < n:
                 if st:
-
-                        res[i]=st[-1]
-
-          
-
-                    
-
+                    ans[i] = st[-1]
             st.append(val)
-
-                
-
-        return res
+        return ans
