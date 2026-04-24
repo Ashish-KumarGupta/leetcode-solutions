@@ -18,7 +18,7 @@ class Solution(object):
                 visited.add(curr)
 
                 for i in range(n):
-                    if isConnected[curr][i] ==1 and n not in visited:
+                    if isConnected[curr][i] ==1 and i not in visited:
                         queue.append(i)
         for j in range(n):
             if j not in visited:
