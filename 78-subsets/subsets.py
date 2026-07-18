@@ -1,23 +1,16 @@
 class Solution(object):
-    def solve(self, nums, res, temp, start):
-        if start == len(nums):
-            res.append(temp[:])
+    def helper(self, ind, curr, ans, nums):
+        if ind == len(nums):
+            ans.append(curr[:])
             return
-
-        # include
-        temp.append(nums[start])
-        self.solve(nums, res, temp, start+1)
-
-        # exclude
-        temp.pop()
-        self.solve(nums, res, temp, start+1)
-
+        curr.append(nums[ind])
+        self.helper(ind+1, curr, ans, nums)
+        curr.pop()
+        self.helper(ind+1, curr,  ans, nums)
     def subsets(self, nums):
-        res = []
-        temp = []
-
-        self.solve(nums, res, temp, 0)
-        return res
-
-
+        ans = []
+        curr = []
+        self.helper(0, curr, ans, nums)
+        return ans
+        
         
