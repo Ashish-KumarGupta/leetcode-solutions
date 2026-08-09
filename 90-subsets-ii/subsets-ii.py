@@ -19,13 +19,14 @@ class Solution(object):
 
     def helper(self, ind, curr, ans, nums):
         if ind >=len(nums):
-            ans.append(curr[:])
+            if curr not in ans:
+                ans.append(curr[:])
             return
         curr.append(nums[ind])
         self.helper(ind + 1, curr, ans, nums)
         curr.pop()
-        while (ind +1 < len(nums)) and (nums[ind] == nums[ind + 1]):
-            ind += 1
+        # while (ind +1 < len(nums)) and (nums[ind] == nums[ind + 1]):
+        #     ind += 1
         self.helper(ind + 1, curr, ans, nums)
 
     def subsetsWithDup(self, nums):
