@@ -5,17 +5,30 @@
 #         self.left = left
 #         self.right = right
 class Solution(object):
-    def helper(self, node, ans):
-            if node == None:
-                return
-            ans.append(node.val)
-            self.helper(node.left,ans)
-            self.helper(node.right,ans)
+    # def preorderTraversal(self, root):
+    #     ans = []
+
+    #     def helper(node):
+    #         if node == None:
+    #             return
+    #         ans.append(node.val)
+    #         helper(node.left)
+    #         helper(node.right)
+    #     helper(root)
+    #     return ans
+
+
+
+    def helper(self, root, ans):
+        if root == None:
+            return
+        ans.append(root.val)
+        self.helper(root.left,ans)
+        self.helper(root.right,ans)
         
     def preorderTraversal(self, root):
         ans = []
         self.helper(root,ans)
         return ans
 
-        
         
