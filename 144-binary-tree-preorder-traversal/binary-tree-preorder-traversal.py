@@ -19,16 +19,33 @@ class Solution(object):
 
 
 
-    def helper(self, root, ans):
-        if root == None:
-            return
-        ans.append(root.val)
-        self.helper(root.left,ans)
-        self.helper(root.right,ans)
-        
-    def preorderTraversal(self, root):
-        ans = []
-        self.helper(root,ans)
-        return ans
 
+
+
+    # def helper(self, root, ans):
+    #     if root == None:
+    #         return
+    #     ans.append(root.val)
+    #     self.helper(root.left,ans)
+    #     self.helper(root.right,ans)
         
+    # def preorderTraversal(self, root):
+    #     ans = []
+    #     self.helper(root,ans)
+    #     return ans
+
+    def preorderTraversal(self, root):
+        preorder = []
+        if not root:
+            return preorder
+        st = []
+        st.append(root)
+        while st:
+            root = st[-1]
+            st.pop()
+            preorder.append(root.val)
+            if root.right:
+                st.append(root.right)
+            if root.left:
+                st.append(root.left)
+        return preorder
