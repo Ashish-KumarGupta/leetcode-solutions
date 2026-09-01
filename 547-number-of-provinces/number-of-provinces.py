@@ -5,9 +5,30 @@ class Solution(object):
             if visited[neighbor] == 0:
                 self.dfs(neighbor, adj, visited)
     def findCircleNum(self, isConnected):
+
+        n = len(isConnected)
+        adj = [[]for i in range(n)]
+        for i in range(n):
+            for j in range(n):
+                if isConnected[i][j] == 1 and i!=j:
+                    adj[i].append(j)
+                    adj[j].append(i)
+
+                    
+        visited = [0]*n
+        provinces = 0
+
+        for i in range(n):
+            if visited[i] == 0:
+                provinces +=1
+                self.dfs(i, adj, visited)
+        return provinces
+
+
         
 
-        # BFS
+
+    # BFS
 
         # visited = set()
         # n = len(isConnected)
@@ -56,21 +77,3 @@ class Solution(object):
 
 
     # DFS using adj listt
-
-        n = len(isConnected)
-        adj = [[]for i in range(n)]
-        for i in range(n):
-            for j in range(n):
-                if isConnected[i][j] == 1:
-                    adj[i].append(j)
-        visited = [0]*n
-        provinces = 0
-
-        for i in range(n):
-            if visited[i] == 0:
-                provinces +=1
-                self.dfs(i, adj, visited)
-        return provinces
-
-
-        
