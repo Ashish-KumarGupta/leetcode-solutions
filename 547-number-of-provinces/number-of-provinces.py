@@ -12,7 +12,7 @@ class Solution(object):
             for j in range(n):
                 if isConnected[i][j] == 1 and i!=j:
                     adj[i].append(j)
-                    adj[j].append(i)
+                   
 
                     
         visited = [0]*n
