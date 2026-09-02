@@ -8,10 +8,10 @@ class Solution(object):
         nums2.append(nums1[-1])
         
         for i in range(len(nums2)):
-            if nums2[i] % 2 == 0:
+            if nums2[i] % 2 == 0 or nums2[i] % 2 != 0:
                 return True
-            elif nums2[i] % 2 != 0:
-                return True
+            # elif nums2[i] % 2 != 0:
+            #     return True
             else:
                 return False
         
