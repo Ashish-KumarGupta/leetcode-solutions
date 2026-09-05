@@ -1,9 +1,24 @@
+from collections import deque
 class Solution(object):
     def recursion(self, node, visited, adj):
+        # for bfs
+        q = deque([node])
         visited[node] = 1
-        for neighbor in adj[node]:
-            if visited[neighbor] == 0:
-                self.recursion(neighbor, visited, adj)
+
+        while q:
+            node = q.popleft()
+
+            for i in adj[node]:
+                if visited[i] == 0:
+                    visited[i] = 1
+                    q.append(i)
+
+
+                # for dfs
+        # visited[node] = 1
+        # for neighbor in adj[node]:
+        #     if visited[neighbor] == 0:
+        #         self.recursion(neighbor, visited, adj)
     def findCircleNum(self, isConnected):
         # Converting matrix into list
         n = len(isConnected)
