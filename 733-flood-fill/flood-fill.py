@@ -5,10 +5,10 @@ class Solution(object):
         n = len(image)
         m = len(image[0])
         for dx, dy in direction:
-            nrow = row + dx
-            ncol = col + dy
-            if(nrow >= 0 and nrow < n and ncol >= 0 and ncol < m and image[nrow][ncol] == initcolor and ans[nrow][ncol] != color):
-                self.dfs(nrow, ncol, image, ans, color, initcolor, direction)
+            newrow = row + dx
+            newcol = col + dy
+            if(newrow >= 0 and newrow < n and newcol >= 0 and newcol < m and image[newrow][newcol] == initcolor and ans[newrow][newcol] != color):
+                self.dfs(newrow, newcol, image, ans, color, initcolor, direction)
 
 
 
