@@ -14,7 +14,6 @@ class Solution(object):
         
         pathvisited[node] = 0
         order.append(node)
-        return False
     def findOrder(self, numCourses, prerequisites):
         graph = [[] for _ in range(numCourses)]
 
